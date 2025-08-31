@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>QuickAI Daily Hub</title>
+<meta name="description" content="QuickAI Daily Hub - Smart Daily Assistant & Utilities app. Voice and text commands, To-Do, QR scanner, Stopwatch, Notes, Calendar sync.">
+<meta name="keywords" content="Daily Assistant, AI Assistant, To-Do List, QR Scanner, Stopwatch, Notes, Calendar, Productivity App">
+<link rel="manifest" href="manifest.json">
+<style>
+body { font-family: Arial, sans-serif; margin:0; padding:0; }
+header { background:#6200EE; color:white; padding:1em; text-align:center; }
+section { padding:1em; }
+button { padding:0.5em; margin:0.5em 0; width:100%; }
+#output { margin-top:1em; padding:0.5em; background:#f0f0f0; }
+.bottom-chart { position:fixed; bottom:0; left:0; right:0; background:#eee; padding:0.5em; text-align:center; }
+</style>
+</head>
+<body>
+<header><h1>QuickAI Daily Hub</h1></header>
+<section>
+<button onclick="startAssistant()">Speak or Type Command</button>
+<div id="output">Output will appear here...</div>
+<h2>Utilities</h2>
+<button onclick="openQR()">QR Code Scanner</button>
+<button onclick="openToDo()">To-Do List</button>
+<button onclick="openStopwatch()">Stopwatch</button>
+<button onclick="openNotes()">Notes</button>
+</section>
+<div class="bottom-chart">Streak Tracker / Bottom Chart</div>
+
+<script>
+function startAssistant(){
+  let command = prompt("Enter your command:");
+  let output = document.getElementById("output");
+  if(command.includes("2+2")){ output.innerText = "2 + 2 = 4"; }
+  else if(command.toLowerCase().includes("reminder")){ output.innerText = "Reminder set!"; }
+  else if(command.toLowerCase().includes("to-do")){ output.innerText = "Opening To-Do List..."; }
+  else { output.innerText = "Command received: " + command; }
+}
+
+function openQR(){ alert("QR Code Scanner opens (stub)"); }
+function openToDo(){ alert("To-Do List opens (stub)"); }
+function openStopwatch(){ alert("Stopwatch opens (stub)"); }
+function openNotes(){ alert("Notes opens (stub)"); }
+</script>
+</body>
+</html>
